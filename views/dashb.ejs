@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+    <link rel="stylesheet"  href="styles/dashb.css">
 </head>
 <body>
-   <h1>budget: <%= budget.amount %></h1>
+    <!-- Header -->
+    <header class="dashboard-header">
+      <h1>💰 Expense Tracker</h1>
+      <h2>Budget: <%= budget.amount %></h2>
+    </header>
+
+    <!-- Categories -->
+    <section class="categories">
+      <div class="categories-header">
+        <h2>Categories</h2>
+        <div class="action-buttons">
+          <button class="add-btn">＋ Add</button>
+          <button class="delete-btn">🗑️ Delete</button>
+        </div>
+      </div>
+
+      <div class="cards">
+       <% categories.forEach((category)=>{ %>
+          <button class="category-button"> <%= category.name  %></button>
+       <% }) %> 
+      </div>
+    </section>
+
+    <!-- Expenses -->
+    <section class="expenses">
+     <div class="categories-header">
+      <h2>Expenses</h2>
+      <div class="action-buttons">
+          <button class="add-btn">＋ Add</button>
+          <button class="delete-btn">🗑️ Delete</button>
+        </div>
+     </div>
+      <div class="expense-category">
+        <h3>🍽️ Food</h3>
+        <ul>
+          <li>Rice</li>
+          <li>Water</li>
+          <li>Meat</li>
+          <li>Vegetables</li>
+          <li>Fruits</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h3>⚡ Utilities</h3>
+        <ul>
+          <li>Gas</li>
+          <li>Internet</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h3>🚗 Transport</h3>
+        <ul>
+          <li>Jeep</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h3>🎮 Entertainment</h3>
+        <ul>
+          <li>Netflix</li>
+          <li>Spotify</li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
